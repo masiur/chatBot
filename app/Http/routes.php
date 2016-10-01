@@ -15,6 +15,23 @@ Route::get('/', function () {
 	return Redirect::route('dashboard');
 });
 
+
+
+
+Route::get('webhook',['as' => 'webhook', 'uses' => 'ChatbotController@webhook']);
+
+
+
+
+
+
+
+
+
+
+
+
+
 Route::group(['middleware' => 'guest'], function(){
 	Route::controller('password', 'RemindersController');
 	Route::get('login', ['as'=>'login','uses' => 'Auth\AuthController@login']);
