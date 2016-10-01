@@ -2,13 +2,12 @@
 vendor/
 .env.*.php
 .env.php
-.env
+
 ### PhpStorm ###
 
 *.iml
 # Composer
-composer.phar
-composer.lock
+
 
 ## Directory-based project format:
 .idea/
