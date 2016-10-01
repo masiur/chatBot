@@ -147,6 +147,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
         Artdarek\OAuth\OAuthServiceProvider::class,
+        'App\Messenger\Providers\MessengerServiceProvider',
     ],
 
     /*
@@ -199,6 +200,7 @@ return [
         'Html'      => Collective\Html\HtmlFacade::class,
         'Entrust'   =>Zizaco\Entrust\EntrustFacade::class,
         'OAuth'     => Artdarek\OAuth\Facade\OAuth::class,
+        'Messenger'        => 'App\Messenger\Facades\Messenger',
     ],
 
 ];

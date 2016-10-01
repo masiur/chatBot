@@ -17,7 +17,7 @@ class ChatbotController extends Controller
 
     public function webhook()
     {
-        //
+        return \Messenger::startConversation();
     }
 
 
