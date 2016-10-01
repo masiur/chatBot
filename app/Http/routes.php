@@ -20,7 +20,9 @@ Route::get('/', function () {
 
 Route::get('webhook',['as' => 'webhook', 'uses' => 'ChatbotController@webhook']);
 
+Route::get('chat',['as' => 'chat.index', 'uses' => 'ChatbotController@index']);
 
+Route::post('sendData',['as' => 'sendData', 'uses' => 'ChatbotController@receiveData']);
 
 
 
