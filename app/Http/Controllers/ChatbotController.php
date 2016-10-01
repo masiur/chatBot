@@ -14,6 +14,13 @@ class ChatbotController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function webhook()
+    {
+        //
+    }
+
+
     public function index()
     {
         //

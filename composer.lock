@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c463a272adfafed1301c4892a4c0b703",
-    "content-hash": "607d4f8c7075b880a96d49c4dbf79dc2",
+    "hash": "c945a8733c570bbc1d4dd801ce293153",
+    "content-hash": "3ea433b447bb5e4e2aa7f7ce1f88c6de",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1305,6 +1305,45 @@
                 "random"
             ],
             "time": "2016-03-18 20:34:03"
+        },
+        {
+            "name": "pimax/fb-messenger-php",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pimax/fb-messenger-php.git",
+                "reference": "9c3874404a7b98b3d84ed8a0edcbc7fca8d70c22"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pimax/fb-messenger-php/zipball/9c3874404a7b98b3d84ed8a0edcbc7fca8d70c22",
+                "reference": "9c3874404a7b98b3d84ed8a0edcbc7fca8d70c22",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "pimax\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Max Pinyugin",
+                    "email": "m.pinyugin@gmail.com",
+                    "homepage": "http://russian-developers.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": " Facebook Messenger Bot PHP API",
+            "homepage": "https://github.com/pimax/fb-messenger-php",
+            "time": "2016-08-22 12:54:31"
         },
         {
             "name": "psr/http-message",
@@ -3905,7 +3944,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "zizaco/entrust": 20,
-        "oriceon/oauth-5-laravel": 20
+        "oriceon/oauth-5-laravel": 20,
+        "pimax/fb-messenger-php": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
