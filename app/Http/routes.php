@@ -16,13 +16,20 @@ Route::get('/', function () {
 });
 
 
+Route::group(['middleware' => 'use.ssl'], function () {
+
+		Route::get('webhook',['as' => 'webhook', 'uses' => 'ChatbotController@webhook']);
+		Route::post('webhook',['as' => 'webhook.post', 'uses' => 'ChatbotController@postWebhook']);
+    
+});
 
 
-Route::get('webhook',['as' => 'webhook', 'uses' => 'ChatbotController@webhook']);
 
-Route::get('chat',['as' => 'chat.index', 'uses' => 'ChatbotController@index']);
 
-Route::post('sendData',['as' => 'sendData', 'uses' => 'ChatbotController@receiveData']);
+
+Route::any('chat',['as' => 'chat.index', 'uses' => 'ChatbotController@index']);
+
+// Route::post('sendData',['as' => 'sendData', 'uses' => 'ChatbotController@receiveData']);
 
 
 

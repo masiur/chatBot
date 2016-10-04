@@ -15,10 +15,15 @@ class ChatbotController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    // public function webhook()
-    // {
-    //     return \Messenger::startConversation();
-    // }
+    public function webhook()
+    {
+        return \Messenger::startConversation();
+    }
+
+    public function postWebhook()
+    {
+        // return \Messenger::startConversation();
+    }
 
     
     public function receiveData(Request $request)
