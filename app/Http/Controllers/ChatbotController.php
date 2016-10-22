@@ -17,7 +17,22 @@ class ChatbotController extends Controller
 
     public function webhook()
     {
-        return \Messenger::startConversation();
+        // return \Messenger::startConversation();
+
+
+        $access_token = env('token');
+        $verify_token = env('verify_token');
+        $hub_verify_token = null;
+         
+        if(isset($_REQUEST['hub_challenge'])) {
+            $challenge = $_REQUEST['hub_challenge'];
+            $hub_verify_token = $_REQUEST['hub_verify_token'];
+        }
+         
+         
+        if ($hub_verify_token === $verify_token) {
+            echo $challenge;
+        }
     }
 
     public function postWebhook()
