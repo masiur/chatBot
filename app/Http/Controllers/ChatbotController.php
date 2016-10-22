@@ -32,7 +32,7 @@ class ChatbotController extends Controller
          
          
         if ($hub_verify_token === $verify_token) {
-            // echo $challenge;
+            echo $challenge;
         }
 
 
