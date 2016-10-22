@@ -42,9 +42,9 @@ class ChatbotController extends Controller
         $sender = $input['entry'][0]['messaging'][0]['sender']['id'];
         $message = $input['entry'][0]['messaging'][0]['message']['text'];
 
-        $demo = new Answer();
-        $demo->answer = $message;
-        $demo->save();
+        // $demo = new Answer();
+        // $demo->answer = $message;
+        // $demo->save();
 
 
         /**
@@ -82,35 +82,35 @@ class ChatbotController extends Controller
 
 
 
-            // $options_header = array ( //Necessary Headers
-            //         'http' => array(
-            //         'method' => 'POST',
-            //         'content' => json_encode($data_to_send),
-            //         'header' => "Content-Type: application/json\n"
-            //     )
-            // );
-            // $context = stream_context_create($options_header);
-            // file_get_contents("https://graph.facebook.com/v2.6/me/messages?access_token=$access_token",false,$context);
+            $options_header = array ( //Necessary Headers
+                    'http' => array(
+                    'method' => 'POST',
+                    'content' => json_encode($jsonData),
+                    'header' => "Content-Type: application/json\n"
+                )
+            );
+            $context = stream_context_create($options_header);
+            file_get_contents("https://graph.facebook.com/v2.6/me/messages?access_token=$access_token",false,$context);
 
             
 
             //Encode the array into JSON.
-            $jsonDataEncoded = $jsonData;
+            // $jsonDataEncoded = $jsonData;
 
-            //Tell cURL that we want to send a POST request.
-            curl_setopt($ch, CURLOPT_POST, 1);
+            // //Tell cURL that we want to send a POST request.
+            // curl_setopt($ch, CURLOPT_POST, 1);
 
-            //Attach our encoded JSON string to the POST fields.
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonDataEncoded);
+            // //Attach our encoded JSON string to the POST fields.
+            // curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonDataEncoded);
 
-            //Set the content type to application/json
-            curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-            //curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/x-www-form-urlencoded'));
+            // //Set the content type to application/json
+            // curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+            // //curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/x-www-form-urlencoded'));
 
-            //Execute the request
-            if(!empty($input['entry'][0]['messaging'][0]['message'])){
-                $result = curl_exec($ch);
-            }
+            // //Execute the request
+            // if(!empty($input['entry'][0]['messaging'][0]['message'])){
+            //     $result = curl_exec($ch);
+            // }
 
 
 
