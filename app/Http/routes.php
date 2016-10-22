@@ -24,8 +24,8 @@ Route::get('/', function () {
 // });
 
 
-Route::any('webhook',['as' => 'webhook', 'uses' => 'ChatbotController@webhook']);
-// Route::post('webhook',['as' => 'webhook.post', 'uses' => 'ChatbotController@postWebhook']);
+Route::get('webhook',['as' => 'webhook', 'uses' => 'ChatbotController@webhook']);
+Route::post('webhook',['as' => 'webhook.post', 'uses' => 'ChatbotController@postWebhook']);
 
 
 Route::any('chat',['as' => 'chat.index', 'uses' => 'ChatbotController@index']);
