@@ -1,4 +1,5 @@
-<?php namespace App\Messenger\Helpers;
+<?php
+namespace App\Messenger\Helpers;
 
 use App\Answer;
 use pimax\FbBotApp;
