@@ -50,6 +50,7 @@ class ChatbotController extends Controller
         /**
          * Some Basic rules to validate incoming messages
          */
+        $message_to_reply = 'Huh! what do you mean?';
         if(preg_match('[time|current time|now]', strtolower($message))) {
 
             // Make request to Time API
@@ -96,8 +97,8 @@ class ChatbotController extends Controller
             //curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/x-www-form-urlencoded'));
 
             //Execute the request
-            if(!empty($input['entry'][0]['messaging'][0]['message'])){
-                $result = curl_exec($ch);
+            if (!empty($message)) {
+                $result = curl_exec($ch); // user will get the message
             }
 
         
