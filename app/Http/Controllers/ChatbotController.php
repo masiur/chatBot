@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Response;
+use App\Answer;
 class ChatbotController extends Controller
 {
     /**
@@ -41,6 +42,11 @@ class ChatbotController extends Controller
         $sender = $input['entry'][0]['messaging'][0]['sender']['id'];
         $message = $input['entry'][0]['messaging'][0]['message']['text'];
 
+        $demo = new Answer();
+        $demo->answer = $message;
+        $demo->save();
+
+
         /**
          * Some Basic rules to validate incoming messages
          */
@@ -73,6 +79,8 @@ class ChatbotController extends Controller
                     "text":"Huh! what do you mean?"
                 }
             }';
+
+
 
             // $options_header = array ( //Necessary Headers
             //         'http' => array(
