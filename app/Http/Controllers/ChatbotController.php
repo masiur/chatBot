@@ -109,7 +109,7 @@ class ChatbotController extends Controller
 
     public function postWebhook()
     {
-        return Messenger::startConversation();
+        Messenger::startConversation();
     }
 
     
