@@ -56,6 +56,9 @@ class Messenger
 
 		            if ($bot_answer) {
 		            	$this->bot->send(new Message($message['sender']['id'], $bot_answer->answer));
+		            } else if($command == ""){
+		            	continue;
+		            
 		            } else {
 		            	//Default
 		            	$this->bot->send(new Message($message['sender']['id'], 'Sorry. I don’t understand you.'));
