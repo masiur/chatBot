@@ -240,4 +240,13 @@ class ChatbotController extends Controller
                         
                     ], $status);
     }
+
+
+
+    public function privacyPolicy()
+    {
+        return view('privacyPolicy')->with('title', 'Privacy Policy');
+    }
+
+    
 }
