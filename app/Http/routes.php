@@ -32,7 +32,7 @@ Route::any('chat',['as' => 'chat.index', 'uses' => 'ChatbotController@index']);
 
 Route::post('sendData',['as' => 'sendData', 'uses' => 'ChatbotController@receiveData']);
 
-
+Route::any('privacy',['as' => 'chat.privacy', 'uses' => 'ChatbotController@privacyPolicy']);
 
 
 
