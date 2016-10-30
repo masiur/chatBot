@@ -45,9 +45,16 @@ class Messenger
 
 		            // When bot receive message from user
 		            if (!empty($message['message'])) {
-		                $command = $message['message']['text'];
+		            	//Check if the message is a greeting
+		            	if(greetings($message['message']['text']) == 1){
+		            		
+		            		$command = $message['message']['text'];
+		            	}else{
+		            		$command = wordExtract($message['message']['text']);
+		            	}
 		            // When bot receive button click from user
 		            } else if (!empty($message['postback'])) {
+
 		                $command = $message['postback']['payload'];
 		            }
 
@@ -55,8 +62,11 @@ class Messenger
 		            $bot_answer = Answer::where('command', '=', strtolower($command))->first();
 
 		            if ($bot_answer) {
+
 		            	$this->bot->send(new Message($message['sender']['id'], $bot_answer->answer));
+		            	//When there is no command Basically skip the delivery msg
 		            } else if($command == ""){
+
 		            	continue;
 		            
 		            } else {
@@ -67,4 +77,34 @@ class Messenger
 		    }
 		}
 	}
+
+	// find the words of length more than 3 and append them to make the final command
+	//return $command
+	public function wordExtract($message){
+		$processedMsg = "";
+		$arr = str_word_count($message,1);
+		$arrayLength = count($arr);
+		for($count=0; $count < $arrayLength; $count++){
+			if(strlen(strval($arr[$count])) > 3){
+				$processedMsg = $processedMsg.strval($arr[$count]);
+			}else{
+				continue;
+			}
+		}
+		return trim($processedMsg);
+	}
+
+	//If the message is a greeting it has to be handled first
+	//return a boolean-like value to check if it is a greeting or not
+	private function greetings($message){
+		$check = strtolower(trim($message,".,!?"));
+		if(strlen($message) > 8){
+			return 0;
+		} else if($message == "hi" || $message == "hello" || $message == "bye" ||
+		 $message == "ok" || $message == "bye bye" || $message == "good bye"){
+				return 1;
+			}
+		
+	}
+
 }
