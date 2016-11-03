@@ -64,11 +64,7 @@ class Messenger
 
 		            	$this->bot->send(new Message($message['sender']['id'], $bot_answer->answer));
 		            	//When there is no command Basically skip the delivery msg
-		            } else if($command == ""){
-
-		            	continue;
-		            
-		            } else {
+		            }  else {
 		            	//Default
 		            	$this->bot->send(new Message($message['sender']['id'], 'Sorry. I don’t understand you.'));
 		            }
