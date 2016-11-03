@@ -22,7 +22,11 @@ class QuestionsAndAnswerSeeder extends Seeder
             ['command' => 'you are quite fun', 'answer' => 'You are welcome, BTW, tht\'s my job yeah!', 'user_id' => 1],
             ['command' => 'how it\'s the weather today', 'answer' => 'I can\'t help you with this may be my friend Poncho [https://www.facebook.com/hiponcho] can help it to you.', 'user_id' => 1],
             ['command' => 'life is too short', 'answer' => 'We all know yeah', 'user_id' => 1],
-            ['command' => 'haha', 'answer' => 'It is funny?', 'user_id' => 1],
+            ['command' => 'What exam date', 'answer' => 'Its 26 November. All the best. :)', 'user_id' => 1],
+            ['command' => 'know exam seat plan', 'answer' => 'It will be provided to you in right time via sms.', 'user_id' => 1],
+            ['command' => 'sust location', 'answer' => 'Akhalia, Sylhet. Just in the right place ;)', 'user_id' => 1],
+            ['command' => 'give admission circular', 'answer' => 'It can be downloaded from www.sust.edu/addmission', 'user_id' => 1],
+            ['command' => 'thank', 'answer' => 'You are always welcome.', 'user_id' => 1],
         ];
 
         DB::table('answers')->delete();

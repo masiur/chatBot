@@ -46,11 +46,12 @@ class Messenger
 		            // When bot receive message from user
 		            if (!empty($message['message'])) {
 		            	//Check if the message is a greeting
-		            	
+		            	if($this->greetings($message['message']['text']) == 1){
 		            		
-		            	$command = $message['message']['text'];
-		            	
-		            	
+		            		$command = trim($message['message']['text'],"!:);?,.");
+		            	}else{
+		            		$command = $this->wordExtract($message['message']['text']);
+		            	}
 		            // When bot receive button click from user
 		            } else if (!empty($message['postback'])) {
 
