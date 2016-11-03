@@ -86,7 +86,7 @@ class Messenger
 		$arrayLength = count($arr);
 		for($count=0; $count < $arrayLength; $count++){
 			if(strlen(strval($arr[$count])) > 3){
-				$processedMsg = $processedMsg.strval($arr[$count]);
+				$processedMsg = $processedMsg.strval($arr[$count])." ";
 			}else{
 				continue;
 			}
